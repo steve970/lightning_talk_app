@@ -1,3 +1,22 @@
-<h1>Sign Up</h1>
+<h1>Sign Up for Lightning Talks!</h1>
 
-<%= render partials: "users/form", locals: {object: @user} %>
+<%= form_for @user, url: signup_path do |f| %>
+
+  <%= f.label :first_name, 'First Name' %>
+  <%= f.text_field :first_name %>
+
+  <%= f.label :last_name, 'Last Name' %>
+  <%= f.text_field :last_name %>
+
+  <%= f.label :email, 'Email' %>
+  <%= f.email_field :email %>
+
+  <%= f.label :password, 'Password' %>
+  <%= f.password_field :password %>
+
+  <%= f.label :password_confirmation, 'Password Confirmation' %>
+  <%= f.password_field :password_confirmation %>
+
+  <%= f.submit 'Sign Up' %>
+
+<% end %>
